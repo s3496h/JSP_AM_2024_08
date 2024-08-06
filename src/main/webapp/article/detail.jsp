@@ -15,6 +15,12 @@ List<Map<String, Object>> articleRows = (List<Map<String, Object>>) request.getA
 </head>
 <body>
 
+    <h2>게시물 목록 v2</h2>
+    <ul>
+    
+    
+    </ul>
+
 	<h2>게시물 목록 v1</h2>
 
 	<ul>
