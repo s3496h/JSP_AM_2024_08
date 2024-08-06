@@ -14,16 +14,14 @@ String color = request.getParameter("color");
 </head>
 <body>
 	<h1>
-		<div style="color:<%=color%>">==<%=dan%>단==</div>
+		<div style="color:<%=color%>">
+			==<%=dan%>단==
+		</div>
 	</h1>
 	<%
 	for (int i = 1; i <= limit; i++) {
 	%>
-	<div style="color:<%=color%>"><%=dan%>
-		*
-		<%=i%>
-		=
-		<%=dan * i%></div>
+	<div style="color:<%=color%>"><%=dan%>*<%=i%>=<%=dan * i%></div>
 	<%
 	}
 	%>
