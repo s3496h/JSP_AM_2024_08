@@ -5,28 +5,34 @@
 	pageEncoding="UTF-8"%>
 
 <%
-List<Map<String, Object>> articleRows = (List<Map<String, Object>>) request.getAttribute("articleRows");
+Map<String, Object> articleRow = (Map<String, Object>) request.getAttribute("articleRow");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시물 리스트</title>
+<title>게시물 상세페이지</title>
 </head>
 <body>
 
-    <h2>게시물 목록 v2</h2>
-    <ul>
-    
-    
-    </ul>
+	<h2>게시물 상세페이지</h2>
 
-	<h2>게시물 목록 v1</h2>
+	<div>
+		번호 :
+		<%=articleRow.get("id")%></div>
+	<div>
+		날짜 :
+		<%=articleRow.get("regDate")%></div>
+	<div>
+		제목 :
+		<%=articleRow.get("title")%></div>
+	<div>
+		내용 :
+		<%=articleRow.get("body")%></div>
 
-	<ul>
-		<li><%=articleRows.get(0).get("id")%>번, <%=articleRows.get(0).get("regDate")%>,<%=articleRows.get(0).get("title")%>,<%=articleRows.get(0).get("body")%></li>
-		<li><%=articleRows.get(1).get("id")%>번, <%=articleRows.get(1).get("regDate")%>,<%=articleRows.get(1).get("title")%>,<%=articleRows.get(1).get("body")%></li>
-		<li><%=articleRows.get(2).get("id")%>번, <%=articleRows.get(2).get("regDate")%>,<%=articleRows.get(2).get("title")%>,<%=articleRows.get(2).get("body")%></li>
-	</ul>
+	<div>
+		<a style="color: green" href="list">리스트로 돌아가기</a>
+	</div>
+
 </body>
 </html>
