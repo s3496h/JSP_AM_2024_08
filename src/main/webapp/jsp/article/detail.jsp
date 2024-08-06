@@ -1,9 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%
 Map<String, Object> articleRow = (Map<String, Object>) request.getAttribute("articleRow");
 %>
@@ -14,6 +12,8 @@ Map<String, Object> articleRow = (Map<String, Object>) request.getAttribute("art
 <title>게시물 상세페이지</title>
 </head>
 <body>
+
+	<a href="../home/main">메인 페이지로 </a>
 
 	<h2>게시물 상세페이지</h2>
 
@@ -29,10 +29,8 @@ Map<String, Object> articleRow = (Map<String, Object>) request.getAttribute("art
 	<div>
 		내용 :
 		<%=articleRow.get("body")%></div>
-
 	<div>
 		<a style="color: green" href="list">리스트로 돌아가기</a>
 	</div>
-
 </body>
 </html>
