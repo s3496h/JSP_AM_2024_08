@@ -18,10 +18,10 @@
 
 	<form method="POST" action="doWrite">
 		<div>
-			새 제목 : <input type="text" placeholder="제목 입력해" name="title" />
+			제목 : <input type="text" placeholder="제목 입력해" name="title" />
 		</div>
 		<div>
-		  새 내용 :
+			내용 :
 			<textarea type="text" placeholder="내용 입력해" name="body"></textarea>
 		</div>
 		<button type="submit">작성</button>
