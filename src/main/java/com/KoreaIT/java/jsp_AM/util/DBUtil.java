@@ -72,7 +72,7 @@ public class DBUtil {
 				try {
 					stmt.close();
 				} catch (SQLException e) {
-					throw new SQLErrorException("SQL 예외, stmt 닫기, SQL : " + sql, e);
+					throw new SQLErrorException("SQL 예외,stmt 닫기, SQL : " + sql, e);
 				}
 			}
 		}
