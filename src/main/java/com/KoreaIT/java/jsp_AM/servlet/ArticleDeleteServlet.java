@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
 
 import com.KoreaIT.java.jsp_AM.util.DBUtil;
 import com.KoreaIT.java.jsp_AM.util.SecSql;
@@ -65,6 +63,11 @@ public class ArticleDeleteServlet extends HttpServlet {
 			}
 		}
 
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

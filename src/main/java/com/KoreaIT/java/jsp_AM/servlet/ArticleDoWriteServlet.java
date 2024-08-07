@@ -4,8 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
+
 
 import com.KoreaIT.java.jsp_AM.util.DBUtil;
 import com.KoreaIT.java.jsp_AM.util.SecSql;
@@ -16,7 +15,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/article/dowrite")
+@WebServlet("/article/doWrite")
 public class ArticleDoWriteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,7 +39,6 @@ public class ArticleDoWriteServlet extends HttpServlet {
 
 		try {
 			conn = DriverManager.getConnection(url, user, password);
-			response.getWriter().append("연결 성공!");
 
 			String title = request.getParameter("title");
 			String body = request.getParameter("body");
@@ -53,7 +51,7 @@ public class ArticleDoWriteServlet extends HttpServlet {
 			int id = DBUtil.insert(conn, sql);
 
 			response.getWriter()
-					.append(String.format("<script>alert('%d번 글이 작성 됨'); location.replace('list');</script>", id));
+					.append(String.format("<script>alert('%d번 글이 등록 됨'); location.replace('list');</script>", id));
 
 		} catch (SQLException e) {
 			System.out.println("에러 1 : " + e);
@@ -67,6 +65,10 @@ public class ArticleDoWriteServlet extends HttpServlet {
 			}
 		}
 
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }
