@@ -29,4 +29,14 @@
     <servlet-name>ArticleListServlet</servlet-name>
     <url-pattern>/ArticleListServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DispatherServlet</display-name>
+    <servlet-name>DispatherServlet</servlet-name>
+    <servlet-class>com.KoreaIT.java.jsp_AM.servlet.DispatherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DispatherServlet</servlet-name>
+    <url-pattern>/DispatherServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
