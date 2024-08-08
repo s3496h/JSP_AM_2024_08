@@ -48,7 +48,7 @@
 
 
 	<div>
-		<a style="color: green" href="list">리스트로 돌아가기</a>
+		<a style="color: green" href="../article/list">리스트로 돌아가기</a>
 	</div>
 
 </body>

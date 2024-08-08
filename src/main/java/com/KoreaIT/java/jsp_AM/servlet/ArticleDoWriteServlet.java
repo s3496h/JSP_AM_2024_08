@@ -14,6 +14,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/article/doWrite")
 public class ArticleDoWriteServlet extends HttpServlet {
@@ -40,11 +41,17 @@ public class ArticleDoWriteServlet extends HttpServlet {
 		try {
 			conn = DriverManager.getConnection(url, user, password);
 
+			
+			
+			HttpSession session = request.getSession();
+
 			String title = request.getParameter("title");
 			String body = request.getParameter("body");
+			int loginedMemberId = (int) session.getAttribute("loginedMemberId");
 
 			SecSql sql = SecSql.from("INSERT INTO article");
 			sql.append("SET regDate = NOW(),");
+			sql.append("memberId = ?,", loginedMemberId);
 			sql.append("title = ?,", title);
 			sql.append("`body` = ?;", body);
 
@@ -52,6 +59,7 @@ public class ArticleDoWriteServlet extends HttpServlet {
 
 			response.getWriter()
 					.append(String.format("<script>alert('%d번 글이 등록 됨'); location.replace('list');</script>", id));
+			
 
 		} catch (SQLException e) {
 			System.out.println("에러 1 : " + e);
